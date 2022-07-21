@@ -1,0 +1,61 @@
+<%- include("./_head.ejs"); %> 
+
+<div>
+    <div class="border-b border-grey-400 py-4 mb-8"><%# Header %> 
+        <p class="font-bold text-2xl text-center uppercase">Authentis</p>
+    </div>
+    <div class="flex justify-center px-4 mb-20">
+        <div style="max-width: 370px;">
+            <p class="text-center text-6xl text-blue-400 mb-4" id="shield-icon">
+                <i class="fa fa-shield-alt" aria-hidden="true"></i>
+            </p>
+            <p class="text-center font-medium text-lg capitalize mb-10">
+                <span>Kindly fill in the following details for</span>
+                <span class="text-blue-600 font-bold">verification</span>
+            </p>
+            <form action="/end-user" method="post" class="w-full">
+                <div class="mb-4 w-full relative">
+                    <label for="">Sale point(i.e pharmay)<span class="text-red-500">*</span></label><br />
+                    <input 
+                        type="text" 
+                        name="endpoint" 
+                        id="endpoint-pharmacy" 
+                        placeholder="start typing.."
+                        class="border border-gray-400 w-full py-2 px-3 rounded-md"
+                    >
+                    <div id="search-drop" class="border border-gray-500 w-full shadow-md p-4 absolute bg-blue-50 rounded-md hidden"><%# Search dropdown list %> 
+                        <p class="text-center underline font-semibold mb-2">List of phamacies</p>
+                        <ul id="list-container">
+                            <!-- <li class="border-b border-gray-300 py-2 mb-2 cursor-pointer">Sharmar phamacies</li>
+                            <li class="border-b border-gray-300 py-2 cursor-pointer mb-2">Nyumbani pharmacies</li>
+                            <li class="border-b border-gray-300 py-2 cursor-pointer mb-2">Nyumbani pharmacies</li>
+                            <li class="border-b border-gray-300 py-2 cursor-pointer mb-2">Nyumbani pharmacies</li> -->
+                        </ul>
+                    </div>
+                </div>
+                <!-- This is the qrcode form -->
+                <div class="mb-4 w-full">
+                    <span>Scan qrcode</span>
+                    <div id="reader" width="100%" height="600px" class="rounded-md">
+                        <input 
+                            type="file" 
+                            id="qr-input-file" 
+                            name="qrcode" 
+                            accept="image/*" 
+                            capture 
+                            class="border border-gray-400 w-full py-2 px-3 rounded-md"
+                        >
+                    </div>
+                </div>
+                <div>
+                    <input type="hidden" name="serial" id="serial-input" value="">
+                </div>
+                <div>
+                    <button class="w-full bg-blue-500 text-white rounded-md py-2">Verify</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<%- include("./_close.ejs"); %> 

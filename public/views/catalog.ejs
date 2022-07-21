@@ -1,0 +1,30 @@
+<%- include("./_head.ejs"); %>
+    <%- include("./_header.ejs"); %>
+    <div id="main" class="flex">
+        <%- include("./_aside.ejs"); %>
+        <div class="w-5/6 bg-gray-100 px-16 pt-8">
+            <p class="mb-6">This is the catalog</p>
+            <table 
+                class="w-5/6 divide-gray-300 divide-y-2"
+            >
+                <tr class="text-center bg-blue-400 text-white">
+                    <th class="py-2">s/n</th>
+                    <th>Brand name</th>
+                    <th>Units in stock</th>
+                </tr>
+                <% brands.forEach(brand => { %>
+                    <tr class="text-center border-b border-gray-300">
+                        <td class="py-3"><%= brand.serial %> </td>
+                        <td><%= brand.name %></td>
+                        <td><%= brand.count %> </td>
+                    </tr>
+                <% }) %>
+                <!-- <tr class="text-center border-b border-gray-300">
+                    <td class="py-3">2</td>
+                    <td>Amoxilin</td>
+                    <td>2310</td>
+                </tr> -->
+            </table>
+        </div> 
+    </div> 
+<%- include("./_close.ejs"); %> 

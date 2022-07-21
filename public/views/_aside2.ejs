@@ -1,0 +1,48 @@
+<div class="bg-blue-300 w-2/12"> <%# Aside %>
+    <ul class="w-9/12 mx-auto mt-8">
+        <li class="mb-6">
+            <a href="/dashboard" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                <span class="mr-1"><i class="fa fa-key"></i></span>
+                <span class="font-semibold">Authenticate</span>
+            </a> 
+        </li>
+        <% if(role === "manufacturer") { %>
+            <li class="mb-6">
+                <a href="/register-drug" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                    <span class="mr-1"><i class="fab fa-product-hunt"></i></span>
+                    <span class="font-semibold">Product</span>
+                </a>
+            </li>
+            <li class="mb-6">
+                <a href="/categories" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                    <span class="mr-1"><i class="fas fa-table"></i></span>
+                    <span class="font-semibold">Brands</span>
+                </a>
+            </li>
+            <li class="mb-6">
+                <a href="/catalog" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                    <span class="mr-1"><i class="fab fa-cuttlefish"></i></span>
+                    <span class="font-semibold">Catalog</span>
+                </a>
+            </li>    
+        <% } %> 
+        <li class="mb-6">
+            <a href="/exchange-gain" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                <span class="mr-1"><i class="fas fa-exchange-alt"></i></span>
+                <span class="font-semibold"><span>Change Custody</span><span class="text-white px-1 text-sm rounded-full bg-red-500 relative -top-2"><%= notifications.length %> </span></span>
+            </a>
+        </li>
+        <li class="mb-6">
+            <a href="/sell" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                <span class="mr-1"><i class="fab fa-sellcast"></i></span>
+                <span class="font-semibold">Sell</span>
+            </a>
+        </li>
+        <li>
+            <a href="/settings" class="inline-block h-full w-full text-gray-800 hover:text-blue-600">
+                <span class="mr-1"><i class="fas fa-cog"></i></span>
+                <span class="font-semibold">Settings</span>
+            </a>
+        </li>
+    </ul>
+</div>

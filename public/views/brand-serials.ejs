@@ -1,0 +1,49 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <p class="font-bold text-lg mb-6">Brand: <%= brand; %> </p>
+            <div>
+                <table class="min-w-max w-full table-auto">
+                    <thead>
+                        <tr class="bg-blue-200 text-gray-600 uppercase text-sm leading-normal">
+                            <th class="py-3 px-6 text-left">Serial</th>
+                            <th class="py-3 px-6 text-left">Production date</th>
+                            <th class="py-3 px-6 text-left">QR code</th>
+                            <th class="py-3 px-6 text-left">Track</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% products.forEach((product, index) => { %>
+                            
+                            <tr
+                                class="<% if(index % 2 != 0) {%> <%= "border-b border-gray-200 bg-gray-50 hover:bg-gray-100" %>  <% }else { %> <%= "border-b border-gray-200 hover:bg-gray-200" %>  <% } %>"
+                            >
+                                <td class="py-3 px-6 text-left"><%= product.serial; %> </td>
+                                <td class="py-3 px-6 text-left"><%= product.DOR %> </td>
+                                <td class="py-3 px-6 text-left">
+                                    <a href="<%= product.qrcode; %>" target="_blank" class="text-blue-500 hover:text-black">
+                                        <span><i class="fas fa-eye"></i></span>
+                                        <span>View</span>
+                                    </a>
+                                </td>
+                                <td class="py-3 px-6 text-left">
+                                    <a href="/track?serial=<%= product.serial; %> " class="text-green-500 hover:text-black">
+                                        <span><i class="fas fa-map-marker-alt"></i></span>
+                                        <span>Track</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }); %> 
+                    </tbody>
+                </table>
+            </div>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

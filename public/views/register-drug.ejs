@@ -1,0 +1,27 @@
+<%- include("./_head.ejs"); %> 
+    <%- include("./_header.ejs"); %> 
+    <div id="main" class="flex">
+        <%- include('./_aside.ejs'); %>
+        <div class="w-5/6 bg-gray-100 px-16 pt-8">
+            <p class="text-lg font-bold divide-x-2 divide-black divide-solid mb-8">Register drugs</p>
+            <form action="/register-drug" method="POST" class="w-96">
+                <div class="mb-6">
+                    <label for="">Drug name</label>
+                    <select name="brand" id="" class="w-full py-3 px-2 rounded-md">
+                        <option value="">Choose a drug to register</option>
+                        <% for(let brand of allBrands) { %>
+                            <option value="<%= brand; %> "><%= brand; %></option>
+                        <% } %> 
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="">Enter number of drugs</label><br />
+                    <input type="number" name="quantity" class="w-full p-2 rounded-md">
+                </div>
+                <button
+                    class="bg-blue-400 text-white w-full py-3 rounded-md hover:bg-blue-500 transition-all"
+                >Register</button>
+            </form> 
+        </div>
+    </div>
+<%- include("./_close.ejs"); %> 

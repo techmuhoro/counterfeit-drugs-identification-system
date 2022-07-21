@@ -1,0 +1,32 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %>
+            <p class="text-lg font-bold divide-x-2 divide-black divide-solid mb-8">Register drugs</p>
+            <form action="/register-drug" method="POST" class="w-96">
+                <div class="mb-6">
+                    <label for="">Drug name</label>
+                    <select name="brand" id="" class="w-full py-3 px-2 rounded-md">
+                        <option value="">Choose a drug to register</option>
+                        <% for(let brand of allBrands) { %>
+                            <option value="<%= brand; %> "><%= brand; %></option>
+                        <% } %> 
+                    </select>
+                </div>
+                <div class="mb-4">
+                    <label for="">Enter number of drugs</label><br />
+                    <input type="number" name="quantity" class="w-full p-2 rounded-md border-2 border-gray-600 shadow-sm">
+                </div>
+                <button
+                    class="bg-blue-400 text-white w-full py-3 rounded-md hover:bg-blue-500 transition-all"
+                >Register</button>
+            </form>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

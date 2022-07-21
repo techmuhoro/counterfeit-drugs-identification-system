@@ -1,0 +1,71 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %>
+            <p class="text-xl mb-6">Change ownership</p>
+            <div class="mb-5">
+                <a href="/exchange-gain" class="bg-blue-300 text-white py-2 px-12 rounded-lg font-semibold">Gain</a>
+                <a href="/exchange-release" class="bg-blue-500 text-white py-2 px-12 rounded-lg">Release</a>
+            </div>
+            <p class="h-0.5 bg-gray-300 mb-8"></p>
+            <div class="">
+                <p class="font-bold text-2xl capitalize mb-3">Approve or Reject the following change requests</p>
+                <table border="1" class="w-5/6">
+                    <thead>
+                        <tr class="bg-blue-400 text-blue-50">
+                            <th>serial</th>
+                            <th class="py-2">brand</th>
+                            <th>Quantity</th>
+                            <th>from</th>
+                            <th class="bg-green-400">accept</th>
+                            <th class="bg-red-400">Reject</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% if(unapprovedRequests.length > 0) { %> 
+                            <% unapprovedRequests.forEach(item => { %>
+                            <tr class="text-center border-b border-gray-500">
+                                <td><%= item.serial %> </td>
+                                <td class="py-3"><%= item.brand; %> </td>
+                                <td>1</td>
+                                <td><%= item.from; %> </td>
+                                <td>
+                                    <form action="/release" method="post">
+                                        <input type="hidden" name="accepted" value="1">
+                                        <input type="hidden" name="product_serial" value="<%- item.serial; %> ">
+                                        <input type="hidden" name="requester" value="<%- item.from; %> ">
+                                        <input type="hidden" value="<%- item._id.toString(); %>" name="request_id">
+                                        <button class="bg-green-400 w-6 h-6 cursor-pointer rounded-full text-white text-sm">
+                                            <i class="fas fa-check"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="/release" method="post">
+                                        <input type="hidden" name="accepted" value="0">
+                                        <input type="hidden" name="product_serial" value="<%- item.serial; %> ">
+                                        <input type="hidden" name="requester" value="<%- item.from; %> ">
+                                        <input type="hidden" value="<%- item._id.toString(); %>" name="request_id">
+                                        <button class="bg-red-400 w-6 h-6 cursor-pointer rounded-full text-white text-sm">
+                                            <i class="fas fa-times"></i>
+                                        </button>
+                                    </form>
+                                </td>
+                            </tr>
+                            <% }); %> 
+                        <% } %>
+                    </tbody>
+                </table>
+                <% if(unapprovedRequests.length < 1) { %>
+                    <p class="text-center w-5/6 font-semibold text-lg text-gray-600">No pending change request</p>
+                <% } %>
+            </div>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

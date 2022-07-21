@@ -1,0 +1,34 @@
+<%- include("./_head.ejs"); %>
+
+    <%- include("./_header.ejs"); %>
+    <div id="main" class="flex">
+        <%- include("./_aside.ejs"); %>
+        <div class="w-5/6 bg-gray-100 px-16 pt-8">
+            <p class="text-xl mb-6">Change ownership</p>
+            <div class="mb-5">
+                <a href="/exchange-gain" class="bg-blue-500 text-white py-2 px-12 rounded-lg font-semibold">Gain</a>
+                <a href="/exchange-release" class="bg-blue-300 text-white py-2 px-12 rounded-lg">Release</a>
+            </div>
+            <p class="h-0.5 bg-gray-300 mb-8"></p>
+            <p class="mb-4">Please enter details below</p>
+            <div class="">
+                <form action="" class="w-96">
+                    <div class="mb-4">
+                        <label for="">Serial Number</label><br />
+                        <input type="text" id="serial" name="serial" class="w-full p-2 rounded-md shadow-md">
+                    </div>
+                    <div class="mb-4">
+                        <label for="manufacturer">Manufacturer</label><br />
+                        <input type="text" id="manufacturer" name="manufacturer" class="w-full p-2 rounded-md shadow-md">
+                    </div>
+                    <button 
+                        class="bg-blue-400 text-white w-full py-2 rounded-lg hover:bg-blue-500 transition-all"
+                    >
+                        Request
+                    </button>  
+                </form>
+            </div>
+        </div> 
+    </div> 
+
+<%- include("./_close.ejs"); %> 

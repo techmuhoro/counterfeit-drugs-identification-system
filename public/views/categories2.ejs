@@ -1,0 +1,44 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <p
+                class="text-lg font-bold mb-8 border-b-2 border-gray-200 border-solid pb-2"
+            >Drug brands</p>
+
+            <form action="/new-brand" method="POST"  class="w-96 mb-12">
+                <div class="mb-4">
+                    <label for="">Add new brand</label><br />
+                    <input required type="text" name="brand" class="w-full px-4 py-3 rounded-md shadow-sm border-2 border-gray-600" placeholder="the new brand">
+                </div>
+                <input type="hidden" name="email" id="email" value="<%= email; %> ">
+                <button
+                    class="bg-blue-400 text-white px-12 py-2 rounded-md"
+                >Add</button>
+            </form>
+            <p></p>
+            <table class="w-96 border rounded-md" border="1">
+                <tr class="bg-blue-200 text-gray-600 uppercase text-sm leading-normal">
+                    <th class="py-2">s/n</th>
+                    <th>Brand name</th>
+                    <th>Date registerer</th>
+                </tr>
+                <% allBrands.forEach((brand, index) => { %>
+                    <tr
+                        class="<% if(index % 2 != 0) {%> <%= "border-b border-gray-200 bg-gray-50 hover:bg-gray-100" %>  <% }else { %> <%= "border-b border-gray-200 hover:bg-gray-200" %>  <% } %>"
+                    >
+                        <td class="text-center py-2"><%= brand.serial; %> </td>
+                        <td class="text-center"><%= brand.name %> </td>
+                        <td class="text-center"><%= brand.dateOfRegistration %> </td>
+                    </tr>
+                <% }); %> 
+            </table>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

@@ -1,0 +1,9 @@
+packages
+    -express
+    -nodemon
+    -ejs
+    -dotenv
+    -axios
+    -express-session
+    -moongose
+    

@@ -1,0 +1,37 @@
+<%- include("./_head.ejs"); %>
+    <%- include("./_header.ejs"); %>
+    <div id="main" class="flex">
+        <%- include("./_aside.ejs"); %>
+        <div class="w-5/6 bg-gray-100 px-16 pt-8">
+            <p
+                class="text-lg font-bold mb-8 border-b-2 border-gray-200 border-solid pb-2"
+            >Drug brands</p>
+
+            <form action="/new-brand" method="POST"  class="w-96 mb-12">
+                <div class="mb-4">
+                    <label for="">Add new brand</label><br />
+                    <input type="text" name="brand" class="w-full px-4 py-3 rounded-md" placeholder="the new brand">
+                </div>
+                <input type="hidden" name="email" id="email" value="<%= email; %> ">
+                <button
+                    class="bg-blue-400 text-white px-12 py-2 rounded-md"
+                >Add</button>
+            </form>
+            <p></p>
+            <table class="w-96 border rounded-md border-solid border-gray-400" border="1">
+                <tr class="bg-blue-400 py-4 text-white">
+                    <th class="py-2">s/n</th>
+                    <th>Brand name</th>
+                    <th>Date registerer</th>
+                </tr>
+                <% for(let brand of allBrands) { %>
+                    <tr class="">
+                        <td class="text-center py-2"><%= brand.serial; %> </td>
+                        <td class="text-center"><%= brand.name %> </td>
+                        <td class="text-center"><%= brand.dateOfRegistration %> </td>
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+    </div> 
+<%- include("./_close.ejs"); %> 

@@ -1,0 +1,26 @@
+<%- include("./_head.ejs"); %> 
+
+<div>
+    <div class="border-b border-grey-400 py-4 mb-8">
+        <p class="font-bold text-2xl text-center uppercase">Authentis</p>
+    </div>
+    <section class="border border-gray-400 rounded-md w-2/4 mx-auto">
+        <div class="text-white bg-red-400 py-2 mb-3"><%# Section header %> 
+            <p class="text-center font-bold text-xl tracking-wide">
+                <span>Verification failed</span>
+            </p>
+            <p class="text-center underline font-semibold italic">Flagged counterfeit</p>
+        </div>
+        <div class="px-6 py-4"><%# Section body %> 
+            <div class="w-2/12 mx-auto">
+                <img src="/imgs/counterfeit-avatar.jpg"class="w-full">
+            </div>
+            <p class="py-3 px-2 bg-gray-100"><span class="mr-2"><i class="fas fa-info-circle"></i></span><span class="font-bold">Reason</span>: Lastholder mismatch </p>
+        </div>
+    </section>
+</div>
+
+<div class="fixed bottom-0 w-full">
+    <%- include("./_footer.ejs") %> 
+</div>
+<%- include("./_close.ejs");  %> 

@@ -1,0 +1,29 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <div class="flex h-16 items-center mb-6">
+                <div class="w-1/12 h-full bg-green-300 flex justify-center items-center">
+                    <p class="text-white text-3xl"><i class="fas fa-thumbs-up"></i></p>
+                </div>
+                <div class="bg-blue-900 text-white w-11/12 h-full flex items-center">
+                    <p class="ml-4 text-lg tracking-wide">Your request has been sent.</p>
+                </div>
+            </div>
+            <div>
+                <p>
+                    <a href="/exchange-gain" class="text-blue-500">
+                        <span><i class="fas fa-arrow-left"></i></span>
+                        <span>Back</span>
+                    </a>
+                </p>
+            </div> 
+        </div> 
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

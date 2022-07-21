@@ -1,0 +1,31 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <p class="font-bold text-lg border-b pb-1 mb-4 border-gray-300">Product track</p>
+            <div class="mb-10">
+                <% track.forEach((item, index) => {  %>
+                    <div class="relative">
+                        <p class="bg-green-500 text-white w-7 h-7 rounded-full flex items-center justify-center absolute -left-4 top-2"><%= index+1; %> </p>
+                        <div style="width: fit-content;" class="border-2 rounded-md border-gray-400 w-48 px-4 py-4">
+                            <p class="mb-4"><span class="font-semibold italic bg-blue-300 px-2 py-1 rounded-md">Name</span>: <span class="capitalize"><%= item.name; %></span></p>
+                            <p class="mb-4"><span class="font-semibold italic bg-yellow-300 px-2 py-1 rounded-md">Email</span>: <span class="capitalize"><%= item.email; %></span></p>
+                            <p class=""><span class="font-semibold italic bg-green-300 px-2 py-1 rounded-md">Type</span>: <span class="capitalize"><%= item.role; %></span></p>
+                        </div>
+                        <% if(index !== track.length - 1) { %> 
+                        <div class="w-12">
+                            <img src="/imgs/arrow-down.png" alt="" class="w-full">
+                        </div>
+                        <% } %> 
+                    </div>
+                <% });  %> 
+            </div>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

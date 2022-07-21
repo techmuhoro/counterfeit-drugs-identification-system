@@ -1,0 +1,21 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <p class="font-bold text-lg border-b pb-1 mb-4 border-gray-300">Enter serail number to see product tract</p>
+            <form action="/track" method="get" class="w-4/12">
+                <div class="mb-4">
+                    <label for="">Serial code</label><br />
+                    <input type="text" id="serial" name="serial" class="border border-gray-600 rounded-md w-full px-4 py-2">
+                </div>
+                <button class="bg-blue-300 text-black font-semibold w-1/2 py-2 rounded-md hover:bg-blue-400 transition-all">View Track</button>
+            </form>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

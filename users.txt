@@ -1,0 +1,50 @@
+manufacturers
+    -corporate@glaxko.co.ke
+    -corporate@dawa.co.ke
+    -corporate@pharma.co.ke
+
+Distritubutors
+    -dist@sharma.com
+    -dist@trexa.org
+    -dist@friya.co.ke
+
+Pharmacies
+    -pharma@lovepharma.co.ke
+    -pharma@salama.co.ke
+    -pharma@nyumbani.co.ke
+    -pharma@pharmaplus.co.ke
+    -pharma@daima.co.ke
+    -pharma@afya.co.ke
+    -pharma@ubora.co.ke
+    -pharma@goodlife.co.ke
+    -pharma@malibu.co.ke
+    -pharma@kam.co.ke
+    -pharma@bells.co.ke
+    -pharma@brabens.co.ke
+
+Hospitals
+    -hospital@knh.co.ke
+    -hospital@medhill.co.ke
+    -hospital@greenhospital.co.ke
+
+User
+    -mucherujulius@gmail.com
+    -muho.mj7@gmail.com
+    -onyangosilas@gmail.com
+
+Password - 12345678
+
+Dawa limited
+    -Fextmont
+    -Roxiclot
+    -Acepar
+
+Pharma limited
+    -Glucomet
+    -Metrolzol
+    -Bicolex
+
+Glaxko limited
+    -Augmentin
+    -Zantac
+    -Flovent

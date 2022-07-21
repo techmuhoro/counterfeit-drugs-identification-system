@@ -1,0 +1,40 @@
+<%- include("./_head.ejs"); %>
+
+<div class="h-screen"><%# this is the entrire viewprot %> 
+    <%- include("./_header.ejs"); %>
+    <div class="flex" style="height: 85%;"><%# center %> 
+        <%- include("./_aside2.ejs"); %><%# sidebar navigation %>
+        <div class="w-10/12 bg-white px-16 pt-8 overflow-y-auto"><%# Main %> 
+            <% if(error) { %>
+                <p class="bg-red-400 px-2 py-3 rounded-md text-white"><%= error; %> </p>
+            <% } %> 
+            <p class="text-xl mb-6">Change ownership</p>
+            <div class="mb-5">
+                <a href="/exchange-gain" class="bg-blue-500 text-white py-2 px-12 rounded-lg font-semibold">Gain</a>
+                <a href="/exchange-release" class="bg-blue-300 text-white py-2 px-12 rounded-lg">Release</a>
+            </div>
+            <p class="h-0.5 bg-gray-300 mb-8"></p>
+            <p class="mb-4">Please enter details below</p>
+            <div class="">
+                <form action="/gain" method="post" class="w-96">
+                    <div class="mb-4">
+                        <label for="">Serial Number</label><br />
+                        <input type="text" id="serial" name="serial" class="w-full p-2 rounded-md shadow-md">
+                    </div>
+                    <div class="mb-4">
+                        <label for="lastholder">Request From</label><br />
+                        <input type="email" id="lastholder" name="email" class="w-full p-2 rounded-md shadow-md">
+                    </div>
+                    <button 
+                        class="bg-blue-400 text-white w-full py-2 rounded-lg hover:bg-blue-500 transition-all"
+                    >
+                        Request
+                    </button>  
+                </form>
+            </div>
+        </div>  
+    </div>
+    <%- include("./_footer.ejs"); %><%# Footer %> 
+</div>
+
+<%- include("./_close.ejs"); %> 

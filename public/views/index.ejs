@@ -1,0 +1,46 @@
+<!-- This is where unthenticated users will be redirected -->
+<%- include("./_head.ejs"); %>
+<div class="w-screen h-screen flex justify-center items-center flex-col">
+    <div class="border w-96 rounded-md border-gray-600 mb-4">
+        <p class="bg-gray-700 py-2 mb-6 text-center text-white">Authentication is required to use this portal</p>
+        <div class="px-4">
+            <form action="/login" method="POST">
+                <div class="mb-6">
+                    <label class="mb-4" for="username">Email</label><br />
+                    <input 
+                        type="email" 
+                        name="email" 
+                        id="username" 
+                        placeholder="eg example@email.com" 
+                        class="border-2 border-gray-600 w-full rounded-md py-2 px-4"
+                        required
+                    >
+                </div>
+                <div class="mb-6">
+                    <label for="password">Password</label><br />
+                    <input 
+                        type="password" 
+                        name="password" 
+                        id="password"
+                        class="border-2 border-gray-600 w-full rounded-md p-2" 
+                        required
+                    >
+                </div>
+                <button
+                    class="bg-blue-400 text-white w-full mb-4 py-2 rounded-md hover:bg-gray-700 transition-all duration-200 ease-linear"
+                >
+                    Login
+                </button>
+                <p class="mb-2 flex ">
+                    <a href="##" class="text-blue-400 underline">Forgot password?</a>
+                </p>
+                <p class="mb-6 flex">
+                    <span>No account?</span>
+                    <a href="/register" class="text-blue-400 underline ml-2">Register here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+    <p>End user? <a href="/end-user" class="text-blue-500">Click here</a></p>
+</div>
+<%- include("./_close.ejs"); %>
